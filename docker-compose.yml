@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    image: mattipaksula/chat-db:latest
+    env_file:
+      - .env
+    ports:
+      - 3000:3000
+    volumes:
+      - ./app/index.mjs:/app/index.mjs
+      - ./app/entrypoint.sh:/app/entrypoint.sh
+      - ./app/state.json:/app/state.json
+      - ./app/commands.json:/app/commands.json
