@@ -3,7 +3,7 @@ version: '3'
 services:
   app:
     build: .
-    image: mattipaksula/chat-db:latest
+    image: mattipaksula/chat-db:1
     env_file:
       - .env
     ports:
