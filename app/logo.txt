@@ -12,3 +12,9 @@ Voit luoda komentoja kuten "!listaa" kirjoittamalla "!listaa" - tämän jälkeen
 Tämän jälkeen voit käyttää komentoa !listaa milloin tahansa myös siten, että annat sille lisämääreitä, esimerkiksi:
 
    !listaa kaikki kirjaimet isolla ja ikäjärjestyksessä
+
+Jos haluat päivittää komennon toiminnan, kirjoita "!!listaa" eli kaksi huutomerkkiä komennon eteen
+
+Voit selata edellisiä komentoja ja syötteitä painamalla nuolta ylös
+
+Saat ohjeet kirjoittamalla !help
