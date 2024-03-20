@@ -1,4 +1,3 @@
-// Import required modules
 import 'dotenv/config';
 import inquirer from 'inquirer';
 import { OpenAI } from 'openai';
@@ -10,7 +9,6 @@ inquirer.registerPrompt(
     inquirerCommandPrompt
 )
 
-// Constants
 const maxRetries = process.env.OPENAI_RETRY || 3;
 const openai = new OpenAI();
 const statePath = 'state.json';
@@ -19,7 +17,6 @@ const commandPath = 'commands.json';
 // Initialize state variables
 let jsonState, jsonCmds, msgs = [];
 
-// Main function
 async function main() {
     try {
         // Initialize state variables from files
@@ -60,7 +57,7 @@ async function processCommand(input) {
     const regex = /^(?:(!{1,2})([\p{L}\d_]+))?(?:\s+(.*))?/u;
     const cmd = input.match(regex);
     const cmdPrefix = cmd[1] || '';
-    const cmdName = cmd[2] || '';
+    const cmdName = cmd[2]?.toLowerCase() || '';
     const cmdContent = cmd[3] || '';
 
     if (input.length == 0) {
@@ -163,8 +160,8 @@ async function processBuiltInCommand(cmdName) {
             break;
         default:
             return false;
-    }
-
+        }
+        
     return true;
 }
 
