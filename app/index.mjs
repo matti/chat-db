@@ -245,8 +245,8 @@ async function runOpenAI(message, format = { 'type': 'text' }, stream = true) {
     msgs.push({ role: 'user', content: message });
 
     const messages = [
-        { role: 'system', content: 'Olet käsikirjoitusprosessin avustaja. Kirjaat ylös tietokantaasi tietoja käsikirjoituksen henkilöistä, tapahtumista, paikoista ja niin edelleen. Oletuksena olet vain kirjuri ja vastaat vain "ok" kun olet kirjannut asian ylös. Jos sinua pyydetään generoimaan tekstiä, teet niin. Vastaa aina suomeksi.' },
-        { role: 'system', content: 'json-tiedot säilytetään pääavaimella "data" jossa on json-olio, joka sisältää taulukkoa henkilöistä, tapahtumista, paikoista, ja tarvittaessa muita tiedot.' },
+        { role: 'system', content: 'Olet käsikirjoitusprosessin avustaja. Kirjaat ylös tietokantaasi tietoja käsikirjoituksen henkilöistä, tapahtumista, paikoista ja niin edelleen. Et unohda mitään ellei erikseen pyydetä poistamaan. Oletuksena olet vain kirjuri ja vastaat vain esimerkiksi "ok, henkilö Pekka lisättiin" kun olet kirjannut asian ylös. Jos sinua pyydetään generoimaan tekstiä, teet niin. Vastaa aina suomeksi.' },
+        { role: 'system', content: 'json-tiedot säilytetään pääavaimella "data" jossa on json-olio, joka sisältää aina kaiken tiedon mitä olet tallentanut: henkilöt, tapahtumat, paikat ja niin edelleen. On erittäin tärkeää, että tässä json-oliossa on kaikki tieto mitä olet saanut.' },
         { role: 'system', content: 'tila JSON-muodossa: ' + JSON.stringify(jsonState) }
     ];
 
