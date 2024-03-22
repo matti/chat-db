@@ -4,6 +4,15 @@ import { OpenAI } from 'openai';
 import fs from 'fs/promises';
 import inquirerCommandPrompt from 'inquirer-command-prompt';
 
+inquirerCommandPrompt.setConfig({
+    history: {
+        save: true,
+        folder: 'history',
+        limit: 9999,
+        blacklist: ['!exit']
+    }
+})
+
 inquirer.registerPrompt(
     'command',
     inquirerCommandPrompt
