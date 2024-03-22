@@ -20,3 +20,4 @@ services:
       - ./app/entrypoint.sh:/app/entrypoint.sh
       - ./app/state.json:/app/state.json
       - ./app/commands.json:/app/commands.json
+      - ./app/history:/app/history
