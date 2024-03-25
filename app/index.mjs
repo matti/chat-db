@@ -261,7 +261,7 @@ async function runOpenAI(message, format = { 'type': 'text' }, stream = true) {
 
 
     if (format.type != 'json_object') {
-        model = 'gpt-4'
+        // model = 'gpt-4'
         messages.push({ role: 'system', content: 'Älä palauta dataa JSON-muodossa vaan antaa se aina tavallisina tekstinä' });
     }
 
